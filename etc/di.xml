@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Cytracon
+ *
+ * This source file is subject to the Cytracon Software License, which is available at https://www.cytracon.com/license.
+ * Do not edit or add to this file if you wish to upgrade the to newer versions in the future.
+ * If you wish to customize this module for your needs.
+ * Please refer to https://www.cytracon.com for more information.
+ *
+ * @category  Cytracon
+ * @package   Cytracon_BuilderClipboard
+ * @copyright Copyright (C) 2020 Cytracon (https://www.cytracon.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Cytracon\Builder\Model\CompositeConfigProvider">
+		<arguments>
+			<argument name="configProviders" xsi:type="array">
+				<item name="directives" xsi:type="array">
+					<item name="clipboard" xsi:type="array">
+						<item name="element" xsi:type="string">Cytracon_BuilderClipboard/js/builder/control/clipboard</item>
+						<item name="group" xsi:type="string">controlTop</item>
+						<item name="sortOrder" xsi:type="number">20</item>
+					</item>
+					<item name="control_shortcode" xsi:type="array">
+						<item name="element" xsi:type="string">Cytracon_BuilderClipboard/js/builder/control/shortcode</item>
+						<item name="group" xsi:type="string">elemControl</item>
+						<item name="sortOrder" xsi:type="number">120</item>
+					</item>
+					<item name="modal_save" xsi:type="array">
+						<item name="element" xsi:type="string">Cytracon_Builder/js/modal/button/save</item>
+						<item name="tag" xsi:type="array">
+							<item name="shortcode" xsi:type="string">modal-shortcode-footer</item>
+						</item>
+						<item name="additionalClasses" xsi:type="string">mgz-pull-right</item>
+						<item name="sortOrder" xsi:type="number">100</item>
+					</item>
+					<item name="modal_footer_close" xsi:type="array">
+						<item name="templateUrl" xsi:type="string">Cytracon_Builder/js/templates/modal/button/footer_close.html</item>
+						<item name="tag" xsi:type="array">
+							<item name="shortcode" xsi:type="string">modal-shortcode-footer</item>
+						</item>
+						<item name="additionalClasses" xsi:type="string">mgz-pull-right</item>
+						<item name="sortOrder" xsi:type="number">110</item>
+					</item>
+				</item>
+				<item name="modals" xsi:type="array">
+					<item name="shortcode" xsi:type="array">
+						<item name="name" xsi:type="string" translate="true">Shortcode</item>
+						<item name="element" xsi:type="string">Cytracon_BuilderClipboard/js/modal/shortcode</item>
+						<item name="class" xsi:type="string">Cytracon\Builder\Data\Modal\Shortcode</item>
+						<item name="form" xsi:type="boolean">true</item>
+						<item name="size" xsi:type="array">
+							<item name="width" xsi:type="number">650</item>
+						</item>
+					</item>
+				</item>
+			</argument>
+		</arguments>
+	</type>
+	<type name="Cytracon\Builder\Model\DefaultConfigProvider">
+		<plugin name="addClipboardHistoryLabel" type="Cytracon\BuilderClipboard\Plugin\Model\DefaultConfigProvider" />
+	</type>
+</config>

@@ -1,0 +1,17 @@
+{
+  "name": "cytracon/builderclipboard",
+  "description": "Magento BuilderClipboard Plugin",
+  "type": "magento2-module",
+  "license": "proprietary",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Cytracon\\BuilderClipboard\\": ""
+    }
+  },
+  "require": {
+    "php": "^7.4 || ^8.0"
+  }
+}
